@@ -1,0 +1,767 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- title page -->
+    <title>HIMAMO | Himpunan Mahasiswa Otomasi Manufaktur & Mekatronika</title>
+    <!-- bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/segitiga.png">
+    <!-- css gue -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    <!-- icon from boxicon -->
+    <link href='https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css' rel='stylesheet'>
+    <!-- font spectral-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,200;0,300;0,400;0,500;0,700;0,800;1,200;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <!-- font karla -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <!-- sweetalert -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.min.css">
+    <!-- custom css -->
+    <style>
+        :root {
+            --header-height: 3rem;
+            --nav-width: 68px;
+            --first-color: #028784;
+            --first-color-light: #b2d8d8;
+            --white-color: #f7f6fb00;
+            --body-font: 'Karla', sans-serif;
+            --normal-font-size: 1rem;
+            --z-fixed: 100
+        }
+
+        *,
+        ::before,
+        ::after {
+            box-sizing: border-box
+        }
+
+        body {
+            position: relative;
+            margin: var(--header-height) 0 0 0;
+            padding: 0 0rem;
+            font-family: var(--body-font);
+            font-size: var(--normal-font-size);
+            transition: .5s;
+            overflow-x: hidden !important;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            font-family: "Spectral", serif;
+        }
+
+        p {
+            font-family: "Karla", sans-serif;
+        }
+
+        .header {
+            width: 100%;
+            height: var(--header-height);
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 1rem;
+            z-index: var(--z-fixed);
+            transition: .5s
+        }
+
+        .header_toggle {
+            color: var(--first-color);
+            font-size: 1.5rem;
+            cursor: pointer
+        }
+
+        .header_img {
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            border-radius: 50%;
+            overflow: hidden
+        }
+
+        .header_img img {
+            width: 30px
+        }
+
+        .l-navbar {
+            position: fixed;
+            top: 0;
+            left: -30%;
+            width: var(--nav-width);
+            height: 100vh;
+            background-color: var(--first-color);
+            padding: .5rem 1rem 0 0;
+            transition: .5s;
+            z-index: var(--z-fixed);
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        .nav {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            overflow: hidden
+        }
+
+        .nav_logo,
+        .nav_link {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            column-gap: 1rem;
+            padding: .5rem 0 .5rem 1.5rem
+        }
+
+        .img_logo {
+            display: grid;
+            grid-template-columns: max-content max-content;
+            align-items: center;
+            column-gap: 1rem;
+            /* T L B R  */
+            padding: .5rem 0 1.5rem 1.25rem;
+        }
+
+        .nav_logo {
+            margin-bottom: 2rem
+        }
+
+        .nav_logo-icon {
+            font-size: 1.25rem;
+            color: #fff;
+        }
+
+        .nav_logo-name {
+            color: #fff;
+            font-weight: 700
+        }
+
+        .nav_link {
+            position: relative;
+            color: var(--first-color-light);
+            margin-bottom: 1.5rem;
+            transition: .3s
+        }
+
+        .nav_link:hover {
+            color: #fff;
+        }
+
+        .nav_icon {
+            font-size: 1.25rem
+        }
+
+        .show {
+            left: 0
+        }
+
+        .body-pd {
+            padding-left: calc(var(--nav-width) + 0rem)
+        }
+
+        .header-pd {
+            padding-left: calc(var(--nav-width) + 1.25rem)
+        }
+
+        .active {
+            color: #fff;
+        }
+
+        .nav_list .active::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            width: 2px;
+            height: 32px;
+            background-color: #fff;
+        }
+
+        .height-100 {
+            height: 100vh
+        }
+
+        .width-100 {
+            width: 100vw;
+        }
+
+        @media screen and (min-width: 768px) {
+            body {
+                margin: calc(var(--header-height) + 0rem) 0 0 0;
+                padding-left: calc(var(--nav-width) + 0rem)
+            }
+
+            .header {
+                height: calc(var(--header-height) + 1rem);
+                padding: 0 2rem 0 calc(var(--nav-width) + 2rem)
+            }
+
+            .header_img {
+                width: 30px;
+                height: 30px
+            }
+
+            .header_img img {
+                width: 30px
+            }
+
+            .l-navbar {
+                left: 0;
+                padding: 1rem 1rem 0 0
+            }
+
+            .show {
+                width: calc(var(--nav-width) + 150px)
+            }
+
+            .body-pd {
+                padding-left: calc(var(--nav-width) + 150px)
+            }
+
+            .header-pd {
+                padding-left: calc(var(--nav-width) + 170px)
+            }
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <body id="body-pd">
+        <header class="header" id="header">
+            <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
+            <div class="row">
+                <div class="col text-center">
+                    <a class="">
+                        <span class="buttondark">
+                            <label class="switch" for="darkSwitch">
+                                <input type="checkbox" id="darkSwitch">
+                                <div class="darktogel">
+                                    <i class='btn-moon bxs-moon bx nav_icon'></i>
+                                    <i class='btn-sun bxs-sun d-none bx nav_icon'></i>
+                                </div>
+                            </label>
+                        </span>
+                    </a>
+                </div>
+                <div class="col text-center">
+                    <i class='bx bxs-user-circle'></i>
+                    <!-- <div class="header_img"> <img src="img/pp.jpg" alt=""> </div> -->
+                </div>
+            </div>
+        </header>
+        <div class="l-navbar" id="nav-bar">
+            <nav class="nav">
+                <div> <a href="./index.html#" class="img_logo">
+                        <img src="img/logo_01.png">
+                        <span class="nav_logo-name">
+                            <img src="img/logo_02.png">
+                        </span> </a>
+                    <div class="nav_list">
+                        <a href="./index.html#" class="nav_link"> <i class='bx bx-home nav_icon'></i></i>
+                            <span class="nav_name">Home</span></a>
+                        <a href="./index.html#about" class="nav_link"> <i class='bx bx-info-circle nav_icon'></i></i>
+                            <span class="nav_name">About</span> </a>
+                        <a href="./index.html#history" class="nav_link">
+                            <i class='bx bx-time nav_icon'></i></i> <span class="nav_name">History</span></a>
+                        <a href="./index.html#division" class="nav_link"><i
+                                class='bx bxs-network-chart nav_icon'></i></i> <span class="nav_name">Division</span>
+                        </a>
+                        <a href="./index.html#leader" class="nav_link"> <i
+                                class='bx bxs-user-account nav_icon'></i><span class="nav_name">Leadership</span> </a>
+                        <a href="./404.html" class="nav_link"> <i class='bx bx-rss nav_icon'></i></i> <span
+                                class="nav_name">Blog</span> </a>
+                        <!-- <a href="http://ae.polman-bandung.ac.id/" class="nav_link"> <i class='bx bxs-school'></i><span
+                                class="nav_name">Website AE</span> </a> -->
+                        <a href="#" class="nav_link active"> <i class='bx bxs-phone nav_icon'></i>Contact</span> </a>
+
+                    </div>
+                </div> <a href="#" class="nav_link"> <i class='bx bx-log-in nav_icon'></i> <span
+                        class="nav_name">Login</span> </a>
+            </nav>
+        </div>
+
+
+<!-- account settings -->
+        <div class="settings_account bg-light px-3 py-2 text-center d-none">
+            <ul classs="list-unstyled">
+                <li>
+                    <i class='text-dark bx bxs-user-circle'></i>
+                    <h2 class="text-dark">Guest</h2>
+                </li>
+                <li>
+                    <p class="text-dark">You Are Not Login Yet, Please Log-In</p>
+                </li>
+                <li>
+                    <button class="btn btn-primary">Login</button>
+                </li>
+            </ul>
+        </div>
+
+        <!--BUTON TO UP-->
+        <a onclick="topFunction()">
+            <div id="myBtn" class="scroll-up text-center butonUP">
+                <span>
+                    <i class='text-white pt-2 bx bx-up-arrow-alt'></i>
+                </span>
+            </div>
+        </a>
+
+        <!--Container Main start-->
+        <div class="wrap bg-light">
+            <div class="parallax3">
+                <div class="container pt-4 pb-5">
+                    <div class="row">
+                        <div class="col pt-4">
+                            <div class="row slider-text text-center">
+                                <h1 class="pt-5 quote"><span>Contact</span> Us</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <section id="contact-form">
+                <div class="container px-5 py-5">
+                    <div class="row pb-3">
+                        <div class="col-md-3 pt-3">
+                            <div class="w-100 text-center">
+                                <div class="contact-icon d-flex align-items-center justify-content-center">
+                                    <i class='text-white bx bxs-map'></i>
+                                </div>
+                                <div class="pt-4 text">
+                                    <p><span>Address : </span> Jl.Kanayakan No 21,Dago,Bandung</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <div class="w-100 text-center">
+                                <div class="contact-icon d-flex align-items-center justify-content-center">
+                                    <i class='text-white bx bxs-envelope'></i>
+                                </div>
+                                <div class="pt-4 text">
+                                    <p><span>Email : </span> <a target="_blank"
+                                            href="mailto:Officialhimamo@gmail.com">Officialhimamo@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <div class="w-100 text-center">
+                                <div class="contact-icon d-flex align-items-center justify-content-center">
+                                    <i class='text-white bx bxl-instagram-alt'></i>
+                                </div>
+                                <div class="pt-4 text">
+                                    <p><span>Instagram : </span> <a target="_blank"
+                                            href="https://www.instagram.com/himamo_polman/">@himamo_polman</a>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 pt-3">
+                            <div class="w-100 text-center">
+                                <div class="contact-icon d-flex align-items-center justify-content-center">
+                                    <i class='text-white bx bx-globe'></i>
+                                </div>
+                                <div class="pt-4 text">
+                                    <p><span>Website : </span> <a target="_blank"
+                                            href="https://himamo.org">Himamo.org</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row my-5 g-0 contact-wrap">
+                        <div class="col-md-5">
+                            <div id="map"></div>
+                        </div>
+                        <div class="col-md-6 formisi">
+                            <div class="w-100 p-md-5">
+                                <h2 class="quote text-dark mb-4">Contact <span class="judul"> Us </span></h2>
+                                <form name="submit-to-google-sheet" class="contactForm">
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="name">Full Name</label>
+                                                <input id="input-nama" type="text" class="form-control" name="Name"
+                                                    id="name" placeholder="Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label class="label" for="email">Email Address</label>
+                                                <input id="input-mail" type="email" class="form-control" name="Email"
+                                                    id="email" placeholder="Email">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group pt-3">
+                                                <label class="label" for="subject">Subject</label>
+                                                <input type="text" class="form-control" name="Subject" id="subject"
+                                                    placeholder="Subject">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group pt-3">
+                                                <label class="label" for="#">Message</label>
+                                                <textarea id="input-pesan" name="Message" class="form-control"
+                                                    id="Message" cols="30" rows="6" placeholder="Message"></textarea>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-12">
+                                            <div class="form-group pt-4">
+                                                <input onClick="return empty()" type="submit" value="Send Message"
+                                                    class="btn-kirim btn btn-primary">
+                                                <div class="submitting"></div>
+                                            </div>
+                                            <button class="btn-load btn btn-primary d-none" type="button" disabled>
+                                                <span class="spinner-border spinner-border-sm" role="status"
+                                                    aria-hidden="true"></span>
+                                                Loading...
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+            <footer class="footer">
+                <div class="container px-5">
+                    <div class="row">
+                        <div class="col-md pt-5 text-md-start">
+                            <img src="img/logo.png">
+                            <p class="text-white pt-3">HIMAMO merupakan himpunan pertama yang didirikan di kampus
+                                Politeknik Manufaktur Negeri Bandung.
+                            </p>
+                            <ul class="footer-social list-unstyled pt-1">
+                                <li class="">
+                                    <a class="ig" target="_blank" href="https://www.instagram.com/himamo_polman/"><i
+                                            class='text-white bx bxl-instagram'></i></a></li>
+                                <li class=""><a class="yt" target="_blank"
+                                        href="https://www.youtube.com/channel/UC0ZEfY5moa9gWIIksG3aflw"><i
+                                            class='text-white bx bxl-youtube'></i></i></a></li>
+                                <li class=""><a class="email" target="_blank" href="mailto:Officialhimamo@gmail.com"><i
+                                            class='text-white bx bxs-envelope'></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md pt-5 text-md-start">
+                            <h4 class="text-white quote">Helpful Links</h4>
+                            <ul class="list-unstyled pt-1 text-white">
+                                <li class="">
+                                    <div class="row">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bx-globe'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <a target="_blank" href="http://ae.polman-bandung.ac.id/"
+                                                class="ps-2 text-white d-inline-block">
+                                                Website Jurusan AE
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="row pt-2">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bx-globe'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <a target="_blank" href="https://polman-bandung.ac.id/"
+                                                class="ps-2 text-white d-inline-block">
+                                                Website POLMAN
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="row pt-2">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bx-sitemap'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <a target="_blank"
+                                                href="https://himamo.org/assets/images/organigram/himamo-24.jpg"
+                                                class="ps-2 text-white d-inline-block">
+                                                Organigram Himamo
+                                            </a>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-md pt-5 text-md-start">
+                            <h4 class="text-white quote">Have a Question ?</h4>
+                            <ul class="list-unstyled pt-1 text-white">
+                                <li class="">
+                                    <div class="row">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bxs-map-alt'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <p class="ps-2">
+                                                Jl.Kanayakan No 21,Dago,Bandung
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="row">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bxs-envelope'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <p class="ps-2">
+                                                Officialhimamo@gmail.com
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="">
+                                    <div class="row">
+                                        <div class="col-icon">
+                                            <i class='pe-3 footericon bx bx-globe'></i>
+                                        </div>
+                                        <div class="col-tulisan">
+                                            <p class="ps-2">
+                                                Himamo.org
+                                            </p>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="credit py-2">
+                    <div class="container pt-3 px-5">
+                        <p class="">Copyright ©2017 - 2021 All rights reserved | Made With <span><i
+                                    class='bx bxs-heart'></i></span> By <span class="text-white">KOMINFO Division</span>
+                        </p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!--Container Main end-->
+        <script src="js/dark-mode-switch.min.js"></script>
+        <!--jquery-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+            integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+        </script>
+        <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
+        <!-- gmap js  -->
+        <script src="js/gmaps.min.js"></script>
+        <!-- sweet alert -->
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.5/dist/sweetalert2.all.min.js"></script>
+
+        <script type='text/javascript'>
+            document.addEventListener("DOMContentLoaded", function (event) {
+
+                const showNavbar = (toggleId, navId, bodyId, headerId) => {
+                    const toggle = document.getElementById(toggleId),
+                        nav = document.getElementById(navId),
+                        bodypd = document.getElementById(bodyId),
+                        headerpd = document.getElementById(headerId)
+
+                    // Validate that all variables exist
+                    if (toggle && nav && bodypd && headerpd) {
+                        toggle.addEventListener('click', () => {
+                            // show navbar
+                            nav.classList.toggle('show')
+                            // change icon
+                            toggle.classList.toggle('bx-x')
+                            // add padding to body
+                            bodypd.classList.toggle('body-pd')
+                            // add padding to header
+                            headerpd.classList.toggle('header-pd')
+                        })
+                    }
+                }
+
+                showNavbar('header-toggle', 'nav-bar', 'body-pd', 'header')
+
+                /*===== LINK ACTIVE =====*/
+                const linkColor = document.querySelectorAll('.nav_link')
+
+                function colorLink() {
+                    if (linkColor) {
+                        linkColor.forEach(l => l.classList.remove('active'))
+                        this.classList.add('active')
+                    }
+                }
+                linkColor.forEach(l => l.addEventListener('click', colorLink))
+            });
+        </script>
+        <script>
+            //Get the button:
+            mybutton = document.getElementById("myBtn");
+            // When the user clicks on the button, scroll to the top of the document
+
+            function topFunction() {
+                document.body.scrollTop = 0; // For Safari
+                document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+            }
+
+            //scroll function saat scroll lakukan...
+            $(window).scroll(function () {
+                var scroll = $(window).scrollTop();
+                if (scroll > 20) {
+                    mybutton.style.display = "block";
+                    document.getElementById("header").classList.add('bg-light');
+                } else {
+                    mybutton.style.display = "none";
+                    document.getElementById("header").classList.remove('bg-light');
+                }
+            })
+        </script>
+        <script type="text/javascript">
+            //google maps function
+            var map;
+            $(document).ready(function () {
+                map = new GMaps({
+                    el: '#map',
+                    lat: -6.877208158946447,
+                    lng: 107.62017115624813,
+                });
+                map.addMarker({
+                    lat: -6.877208158946447,
+                    lng: 107.62017115624813,
+                    title: 'Lima',
+                    infoWindow: {
+                        content: '<p class="mapinfo" >HIMAMO HEADQUARTERS @ POLITEKNIK MANUFAKTUR BANDUNG</p>'
+                    }
+                });
+            });
+        </script>
+        <script>
+            //form to google sheets
+            function empty() {
+                var nama;
+                var mail;
+                var pesan;
+                nama = document.getElementById("input-nama").value;
+                mail = document.getElementById("input-mail").value;
+                pesan = document.getElementById("input-pesan").value;
+                if (nama == "") {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Please Fill The Form!',
+                        icon: 'error',
+                        confirmButtonText: 'Back',
+                        confirmButtonColor: '#028784'
+                    })
+                    return false;
+                };
+                if (mail == "") {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Please Fill The Form!',
+                        icon: 'error',
+                        confirmButtonText: 'Back',
+                        confirmButtonColor: '#028784'
+                    })
+                    return false;
+                };
+                if (pesan == "") {
+                    Swal.fire({
+                        title: 'Error!',
+                        text: 'Please Fill The Form!',
+                        icon: 'error',
+                        confirmButtonText: 'Back',
+                        confirmButtonColor: '#028784'
+                    })
+                    return false;
+                };
+            }
+        </script>
+        <script>
+            //tombol form
+            const scriptURL =
+                'https://script.google.com/macros/s/AKfycbxuHY2OfEhNZKWNCGxA_0ZjRCPIPTZ8FE2TQO__ZLiKq9zbEIX1wFpdorazjow42ew/exec'
+            const form = document.forms['submit-to-google-sheet']
+            const kirim = document.querySelector('.btn-kirim');
+            const loading = document.querySelector('.btn-load');
+
+            form.addEventListener('submit', e => {
+                e.preventDefault()
+                loading.classList.toggle('d-none');
+                kirim.classList.toggle('d-none');
+                fetch(scriptURL, {
+                        method: 'POST',
+                        body: new FormData(form)
+                    })
+                    .then(response => {
+                        Swal.fire({
+                            title: 'Success!',
+                            text: 'Your Message Has Been Sent',
+                            icon: 'success',
+                            confirmButtonText: 'OK',
+                            confirmButtonColor: '#028784'
+                        })
+                        form.reset();
+                        loading.classList.toggle('d-none');
+                        kirim.classList.toggle('d-none');
+                    })
+                    .catch(error => {
+                        Swal.fire({
+                            title: 'Error!',
+                            text: 'Do you want to continue',
+                            icon: 'error',
+                            confirmButtonText: 'Back',
+                            confirmButtonColor: '#028784'
+                        })
+                        form.reset();
+                    })
+            })
+        </script>
+        <script>
+            //switch 2 mode
+            var moon = document.querySelector('.btn-moon');
+            var sun = document.querySelector('.btn-sun');
+
+            document.getElementById("darkSwitch").addEventListener("click", function () {
+                moon.classList.toggle('d-none');
+                sun.classList.toggle('d-none');
+            });
+        </script>
+        <script>
+            // account settings 
+
+            var user_button = document.querySelector('.bxs-user-circle');
+            var settings_account = document.querySelector('.settings_account');
+
+            user_button.addEventListener("click", function () {
+                settings_account.classList.toggle('d-none');
+            })
+        </script>
+
+    </body>
+
+</html>

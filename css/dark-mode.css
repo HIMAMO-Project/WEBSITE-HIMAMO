@@ -1,0 +1,73 @@
+[data-theme="dark"] {
+  background-color: #191d24 !important;
+  transition: 1s;
+  color: #eee;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #393e46 !important;
+  transition: 1s;
+}
+
+[data-theme="dark"] .bg-black {
+  background-color: #eee !important;
+  transition: 1s;
+}
+
+[data-theme="dark"] .text-dark {
+  color: rgba(255, 255, 255) !important;
+  transition: 1s;
+}
+
+[data-theme="dark"] .darktogel {
+  transition: 1s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] .header .col:nth-child(2) {
+  transition: 1s;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+[data-theme="dark"] .contactForm .form-control {
+  transition: 1s;
+  color: white;
+}
+
+[data-theme="dark"] .contact-wrap {
+  transition: 1s;
+  background: #434952;
+}
+
+[data-theme="dark"] .form-control::-webkit-input-placeholder {
+  transition: 1s;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .form-control::-moz-placeholder {
+  transition: 1s;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .form-control:-ms-input-placeholder {
+  transition: 1s;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .form-control:-moz-placeholder {
+  transition: 1s;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+[data-theme="dark"] .swal2-popup {
+  background: #393e46 !important;
+  color: white !important;
+}
+
+[data-theme="dark"] .swal2-title {
+  color: white !important;
+}
+
+[data-theme="dark"] .swal2-html-container {
+  color: white !important;
+}
