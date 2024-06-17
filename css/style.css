@@ -997,22 +997,63 @@ html {
 }
 
 /* AE Pustaka Styles */
+#ae-pustaka .container {
+  color: white;
+}
 
-.subject-box {
-    background-color: #f0f0f0; /* Warna abu-abu muda */
+#ae-pustaka .subject-box {
+    background-color: rgba(255, 255, 255, 0.8); /* Latar belakang putih transparan */
+    border: 1px solid #dee2e6;
     padding: 20px;
     margin-bottom: 20px;
     border-radius: 5px;
-    }
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
 
-.subject-image {
+#ae-pustaka .subject-box .subject-name {
+    font-weight: bold;
+    color: #212529;
+}
+
+#ae-pustaka .subject-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#ae-pustaka .subject-image {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* AE Informasi Styles */
+#ae-informasi {
+    background-color: #f0f0f0;
+}
+
+#ae-informasi .info-box {
+    background-color: white;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
+}
+
+#ae-informasi .info-box:hover {
+    transform: translateY(-5px); /* Efek hover naik */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Efek bayangan lebih gelap saat hover */
+}
+
+#ae-informasi .info-image {
     max-width: 100%;
     height: auto;
     margin-bottom: 10px;
     }
 
-.subject-name {
+#ae-informasi .info-title {
     font-weight: bold;
+    color: #212529;
 }
 
 /* Apa Kata Mereka */
