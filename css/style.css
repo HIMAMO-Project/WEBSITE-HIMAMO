@@ -175,6 +175,20 @@ p {
     width: 100vw;
 }
 
+.banner{
+    background-image: url("../img/paralak2.jpg");
+    background-position: center;
+    height: 200px;
+}
+
+.information-content .col{
+    box-shadow: 3px 3px 5px 3px rgb(199, 199, 199);
+}
+
+.information-content .col img{
+    width: 150px;
+}
+
 @media screen and (min-width: 768px) {
     body {
         margin: calc(var(--header-height) + 0rem) 0 0 0;
@@ -406,6 +420,16 @@ html {
     .px-5 {
         padding-left: 1rem !important;
         padding-right: 1rem !important;
+    }
+}
+
+@media (max-width: 576px){
+    .banner img{
+        width: 300px;
+    }
+
+    .information-content .col{
+        width: 100%;
     }
 }
 
