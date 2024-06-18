@@ -183,6 +183,11 @@ p {
 
 .information-content .col{
     box-shadow: 3px 3px 5px 3px rgb(199, 199, 199);
+    padding: 10px
+}
+
+.information-content a{
+    color: black;
 }
 
 .information-content .col img{
@@ -428,7 +433,7 @@ html {
         width: 300px;
     }
 
-    .information-content .col{
+    .information-content a .col{
         width: 100%;
     }
 }
