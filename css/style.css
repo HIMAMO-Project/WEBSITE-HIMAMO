@@ -1061,6 +1061,43 @@ html {
     margin-bottom: 10px;
 }
 
+/* AE Pustaka Styles */
+#ae-pustaka .container {
+    color: white;
+}
+
+#ae-pustaka .subject-box {
+    background-color: white;
+    border: 1px solid #dee2e6;
+    padding: 20px;
+    height: 180px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end; /* Ensures items are aligned to the bottom */
+    align-items: center; /* Centers children horizontally */
+}
+
+#ae-pustaka .subject-box .subject-name {
+    font-weight: bold;
+    color: #212529;
+    margin-bottom: 0px;
+    margin-top: 10px; /* Adds space between image and text */
+}
+
+#ae-pustaka .subject-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+#ae-pustaka .subject-image {
+    max-width: 100%; /* Ensures the image scales proportionally */
+    height: auto; /* Keeps the height proportional */
+    flex-shrink: 0; /* Prevents the image from shrinking */
+}
+
 /* AE Informasi Styles */
 #ae-informasi {
     background-color: #f0f0f0;
@@ -1070,7 +1107,7 @@ html {
     background-color: white;
     padding: 20px;
     margin-bottom: 20px;
-    border-radius: 5px;
+    border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
 }
@@ -1089,6 +1126,10 @@ html {
 #ae-informasi .info-title {
     font-weight: bold;
     color: #212529;
+    margin: 0;
+}
+#ae-informasi .info-button{
+    margin-bottom: 20px;
 }
 
 /* Apa Kata Mereka */
