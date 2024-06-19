@@ -276,7 +276,7 @@
         </header>
         <div class="l-navbar" id="nav-bar">
             <nav class="nav">
-                <div> <a href="./index.html#" class="img_logo">
+                <div> <a href="#" class="img_logo">
                         <img src="img/logo_01.png">
                         <span class="nav_logo-name">
                             <img src="img/logo_02.png">
@@ -293,20 +293,24 @@
                         </a>
                         <a href="./index.html#leader" class="nav_link"> <i
                                 class='bx bxs-user-account nav_icon'></i><span class="nav_name">Leadership</span> </a>
-                        <a href="./404.html" class="nav_link"> <i class='bx bx-rss nav_icon'></i></i> <span
-                                class="nav_name">Blog</span> </a>
-                        <!-- <a href="http://ae.polman-bandung.ac.id/" class="nav_link"> <i class='bx bxs-school'></i><span
-                                class="nav_name">Website AE</span> </a> -->
-                        <a href="#" class="nav_link active"> <i class='bx bxs-phone nav_icon'></i>Contact</span> </a>
+                        <a href="./index.html#ae-pustaka" class="nav_link"> <i class='bx bxs-book nav_icon'></i>
+                            <span class="nav_name">AE-Pustaka</span></a>
+                        <a href="./index.html#ae-informasi" class="nav_link"> <i
+                                class='bx bxs-info-square nav_icon'></i>
+                            <span class="nav_name">AE-Informasi</span></a>
+                        <a href="#" class="nav_link active"> <i class='bx bxs-phone nav_icon'></i>Contact</span></a>
 
                     </div>
-                </div> <a href="#" class="nav_link"> <i class='bx bx-log-in nav_icon'></i> <span
-                        class="nav_name">Login</span> </a>
+                </div>
+                <a href="#" class="nav_link">
+                    <i class='bx bx-log-in nav_icon'></i>
+                    <span class="nav_name">Login</span>
+                </a>
             </nav>
         </div>
 
 
-<!-- account settings -->
+        <!-- account settings -->
         <div class="settings_account bg-light px-3 py-2 text-center d-none">
             <ul classs="list-unstyled">
                 <li>
@@ -460,7 +464,8 @@
                             <ul class="footer-social list-unstyled pt-1">
                                 <li class="">
                                     <a class="ig" target="_blank" href="https://www.instagram.com/himamo_polman/"><i
-                                            class='text-white bx bxl-instagram'></i></a></li>
+                                            class='text-white bx bxl-instagram'></i></a>
+                                </li>
                                 <li class=""><a class="yt" target="_blank"
                                         href="https://www.youtube.com/channel/UC0ZEfY5moa9gWIIksG3aflw"><i
                                             class='text-white bx bxl-youtube'></i></i></a></li>
@@ -574,7 +579,7 @@
         <!-- bootstrap -->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
+            </script>
         <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=true"></script>
         <!-- gmap js  -->
         <script src="js/gmaps.min.js"></script>
@@ -714,9 +719,9 @@
                 loading.classList.toggle('d-none');
                 kirim.classList.toggle('d-none');
                 fetch(scriptURL, {
-                        method: 'POST',
-                        body: new FormData(form)
-                    })
+                    method: 'POST',
+                    body: new FormData(form)
+                })
                     .then(response => {
                         Swal.fire({
                             title: 'Success!',

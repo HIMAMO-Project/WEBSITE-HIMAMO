@@ -175,24 +175,6 @@ p {
     width: 100vw;
 }
 
-.banner{
-    background-image: url("../img/paralak2.jpg");
-    background-position: center;
-    height: 200px;
-}
-
-.information-content .col{
-    box-shadow: 3px 3px 5px 3px rgb(199, 199, 199);
-    padding: 10px
-}
-
-.information-content a{
-    color: black;
-}
-
-.information-content .col img{
-    width: 150px;
-}
 
 @media screen and (min-width: 768px) {
     body {
@@ -428,15 +410,6 @@ html {
     }
 }
 
-@media (max-width: 576px){
-    .banner img{
-        width: 300px;
-    }
-
-    .information-content a .col{
-        width: 100%;
-    }
-}
 
 @media (max-width: 992px){
     .detail-information-text{
@@ -1110,6 +1083,7 @@ html {
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Efek bayangan */
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transisi untuk hover */
+    text-align: left;
 }
 
 #ae-informasi .info-box:hover {
@@ -1123,11 +1097,17 @@ html {
     margin-bottom: 10px;
     }
 
-#ae-informasi .info-title {
+#ae-informasi .info-date{
+    color: #212529;
+    margin: 0;
+}
+
+#ae-informasi .info-title{
     font-weight: bold;
     color: #212529;
     margin: 0;
 }
+
 #ae-informasi .info-button{
     margin-bottom: 20px;
 }
