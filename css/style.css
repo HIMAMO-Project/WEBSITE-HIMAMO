@@ -438,6 +438,12 @@ html {
     }
 }
 
+@media (max-width: 992px){
+    .detail-information-text{
+        margin-top: 15px;
+    }
+}
+
 /* small devices */
 @media (max-width: 1200px) {
 
