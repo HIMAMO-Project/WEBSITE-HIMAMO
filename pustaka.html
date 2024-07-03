@@ -132,7 +132,7 @@
                     <div class="row">
                         <div class="col pt-4">
                             <div class="row slider-text text-center">
-                                <h1 class="pt-5 quote"><span>AE</span> Informasi</h1>
+                                <h1 class="pt-5 quote"><span>AE</span> Pustaka</h1>
                             </div>
                         </div>
                     </div>
@@ -168,13 +168,14 @@
                     </div>
                 </div>
             </section>
+            <!-- dropdown -->
+            <div class="container">
                 <div class="row pt-5">
                     <div class="col-12">
                         <div class="d-flex justify-content-end">
                             <div class="dropdown me-3">
-                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
-                                    data-bs-toggle="dropdown" aria-expanded="false">
-                                    Pilih Subjek
+                                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Paling Relevan
                                 </button>
                                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                     <li><a class="dropdown-item" href="#">Paling Relevan</a></li>
@@ -187,139 +188,72 @@
                         </div>
                     </div>
                 </div>
-
+        
+                <!-- Books Section -->
                 <div class="row py-5">
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book1.jpg" class="card-img-top" alt="Buku 1">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 1</h5>
-                                <p class="card-text">Deskripsi singkat buku 1.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
+                    <!-- Loop through books and create cards dynamically -->
+                    <!-- Assuming you have a list of books with title, author, collection, pages, year, and link -->
+                    <!-- Replace with dynamic content if using a backend language like PHP, Python, etc. -->
+                    <div class="col-md-6 mb-4">
+                        <div class="book-card">
+                            <div class="book-cover">COVER BUKU</div>
+                            <div class="book-info">
+                                <div class="book-title">Judul Buku</div>
+                                <div class="book-details">Penulis: Lorem Ipsum</div>
+                                <div class="book-details">Jenis Koleksi: Lorem Ipsum</div>
+                                <div class="book-details">Jumlah Hal: 1XX</div>
+                                <div class="book-details">Tahun Terbit: 20XX</div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book2.jpg" class="card-img-top" alt="Buku 2">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 2</h5>
-                                <p class="card-text">Deskripsi singkat buku 2.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book3.jpg" class="card-img-top" alt="Buku 3">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 3</h5>
-                                <p class="card-text">Deskripsi singkat buku 3.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book4.jpg" class="card-img-top" alt="Buku 4">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 4</h5>
-                                <p class="card-text">Deskripsi singkat buku 4.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row py-3">
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book5.jpg" class="card-img-top" alt="Buku 5">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 5</h5>
-                                <p class="card-text">Deskripsi singkat buku 5.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book6.jpg" class="card-img-top" alt="Buku 6">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 6</h5>
-                                <p class="card-text">Deskripsi singkat buku 6.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book7.jpg" class="card-img-top" alt="Buku 7">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 7</h5>
-                                <p class="card-text">Deskripsi singkat buku 7.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book8.jpg" class="card-img-top" alt="Buku 8">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 8</h5>
-                                <p class="card-text">Deskripsi singkat buku 8.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="row py-3">
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book9.jpg" class="card-img-top" alt="Buku 9">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 9</h5>
-                                <p class="card-text">Deskripsi singkat buku 9.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book10.jpg" class="card-img-top" alt="Buku 10">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 10</h5>
-                                <p class="card-text">Deskripsi singkat buku 10.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book11.jpg" class="card-img-top" alt="Buku 11">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 11</h5>
-                                <p class="card-text">Deskripsi singkat buku 11.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3 text-center">
-                        <div class="card">
-                            <img src="./img/book12.jpg" class="card-img-top" alt="Buku 12">
-                            <div class="card-body">
-                                <h5 class="card-title">Judul Buku 12</h5>
-                                <p class="card-text">Deskripsi singkat buku 12.</p>
-                                <a href="#" class="btn btn-primary">Lihat Buku</a>
-                            </div>
+                            <a href="#" class="btn btn-primary read-button">Baca</a>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-    </div>
-
+        
+            <script>
+                // Sample book data, replace with your actual data
+                const books = [
+                    { cover: 'COVER BUKU', title: 'Judul Buku 1', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book1' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 2', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book2' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 3', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book3' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 4', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book4' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 5', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book5' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 6', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book6' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 7', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book7' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 8', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book8' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 9', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book9' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 10', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book10' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 11', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book11' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 12', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book12' },
+                    { cover: 'COVER BUKU', title: 'Judul Buku 13', author: 'Lorem Ipsum', collection: 'Lorem Ipsum', pages: '1XX', year: '20XX', link: 'https://example.com/book12' }
+                ];
+        
+                const container = document.querySelector('.row.py-5');
+        
+                books.forEach(book => {
+                    const bookCard = document.createElement('div');
+                    bookCard.classList.add('col-md-6', 'mb-4');
+                    bookCard.innerHTML = `
+                        <div class="book-card">
+                            <div class="book-cover">${book.cover}</div>
+                            <div class="book-info">
+                                <div class="book-title">${book.title}</div>
+                                <div class="book-details">Penulis: ${book.author}</div>
+                                <div class="book-details">Jenis Koleksi: ${book.collection}</div>
+                                <div class="book-details">Jumlah Hal: ${book.pages}</div>
+                                <div class="book-details">Tahun Terbit: ${book.year}</div>
+                            </div>
+                            <a href="${book.link}" class="btn btn-primary read-button">Baca</a>
+                        </div>
+                    `;
+                    container.appendChild(bookCard);
+                });
+            </script>
+        
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        </body>
+        
+        </html>
     <footer class="footer">
         <div class="container px-5">
             <div class="row">
