@@ -1811,7 +1811,7 @@ select:-webkit-autofill:focus {
     font-size: 16px;
 }
 .parallax3 {
-    background: url('your-image-path.jpg') no-repeat center center;
+    background: url('img/paralak2.jpg') no-repeat center center;
     background-size: cover;
     height: 300px;
     display: flex;
