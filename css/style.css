@@ -1813,17 +1813,55 @@ select:-webkit-autofill:focus {
 .parallax3 {
     background: url('img/paralak2.jpg') no-repeat center center;
     background-size: cover;
-    height: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    height: 300px; /* Adjust height as needed */
+    position: relative;
+}
+.parallax3 .container {
+    position: relative;
+    z-index: 1;
 }
 .quote {
-    font-size: 3rem;
+    font-size: 2.5rem; /* Adjust font size as needed */
     color: #fff;
+    text-align: center;
+    padding-top: 50px; /* Adjust padding as needed */
+}
+.search-bar-container {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px; /* Adjust margin to place search bar appropriately */
 }
 .search-bar {
-    margin-top: -50px;
-    z-index: 10;
-    position: relative;
+    width: 45%; /* Adjust width as needed */
+    display: flex;
+    align-items: center;
+    background: #fff;
+    border-radius: 20px;
+    padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.search-bar input {
+    border: none;
+    outline: none;
+    width: 100%;
+    padding: 5px;
+}
+.search-bar button {
+    background: none;
+    border: none;
+    color: #333;
+    cursor: pointer;
+}
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Optional: Adds a dark overlay for better text readability */
+    z-index: 0;
+}
+.footer-heading {
+    font-size: 1.5rem; /* Adjust the size to your preference */
+    color: #fff;
 }
