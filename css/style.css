@@ -1722,3 +1722,25 @@ select:-webkit-autofill:focus {
     visibility: visible;
     transition: transform 0s;
 }
+.card-custom {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.card-custom img {
+    width: 100%;
+    height: auto;
+}
+.btn-custom {
+    background-color: #00bfa5;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn-custom:hover {
+    background-color: #009688;
+}
