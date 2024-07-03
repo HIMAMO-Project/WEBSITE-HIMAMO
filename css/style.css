@@ -1744,3 +1744,86 @@ select:-webkit-autofill:focus {
 .btn-custom:hover {
     background-color: #009688;
 }
+.book-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #fff;
+}
+
+.book-cover {
+    width: 80px;
+    height: 100px;
+    background-color: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    margin-right: 20px;
+}
+
+.book-info {
+    flex: 1;
+}
+
+.book-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.book-details {
+    margin: 5px 0;
+}
+
+.read-button {
+    margin-left: 20px;
+}
+
+.search-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.search-info .search-text {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.dropdown .dropdown-toggle {
+    background-color: #e0e0e0;
+    border: none;
+    color: #000;
+}
+
+.sort-by {
+    display: flex;
+    align-items: center;
+}
+
+.sort-by-text {
+    margin-right: 10px;
+    font-size: 16px;
+}
+.parallax3 {
+    background: url('your-image-path.jpg') no-repeat center center;
+    background-size: cover;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.quote {
+    font-size: 3rem;
+    color: #fff;
+}
+.search-bar {
+    margin-top: -50px;
+    z-index: 10;
+    position: relative;
+}
